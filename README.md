@@ -37,4 +37,5 @@ Get more information about [Mint-ui](http://mint-ui.github.io/docs)
 * online chat
 * online excel
 * online pdf
+* system version log
 * administrator workstation
