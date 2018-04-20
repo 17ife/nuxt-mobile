@@ -1,6 +1,6 @@
 # nuxt
 
-> A ssr project build by nuxt.js 
+> A ssr project build by nuxt.js
 
 > mobile project starter
 
@@ -24,3 +24,18 @@ $ npm run generate
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
 Get more information about [Mint-ui](http://mint-ui.github.io/docs)
+
+
+## dev plan
+
+* login
+* notification
+* contact list
+* server management
+* work flow
+* email template
+* online chat
+* online excel
+* online pdf
+* system version log
+* administrator workstation

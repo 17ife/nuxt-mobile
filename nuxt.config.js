@@ -24,8 +24,29 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
 
+  vender:[
+    'element-ui'
+  ],
+  babel:{
+    "plugins": [["component", [
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-default"
+      },
+      'transform-async-to-generator',
+      'transform-runtime'
+    ]]],
+    comments: true
+  },
+
+  css: [
+    // 全部引用的时候需要用到
+    // 'element-ui/lib/theme-default/index.css'
+  ],
+
   plugins: [
-    { src: "~plugins/mint-ui", ssr: true }
+    // { src: "~plugins/mint-ui", ssr: true }
+    { src: '~plugins/element-ui', ssr: true }
   ],
   /*
   ** Build configuration

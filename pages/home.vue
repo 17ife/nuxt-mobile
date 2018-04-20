@@ -1,26 +1,12 @@
 <template>
+
 	<div >
 		<navbar></navbar>
 		<div class="mainContainer">
 			
 		</div>
 	</div>
-</template>
 
-<script>
-
-import navbar from '~/components/navbar.vue'
-
-export default {
-	components: {
-    navbar
-  },
-	methods:{
-		btn:function(){
-			this.$toast('Hello world!')
-		}
-	}
-}
 </script>
 
 <style scoped>
