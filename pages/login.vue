@@ -21,3 +21,10 @@ export default {
 	
 }
 </script>
+
+<style>
+.login-panel{
+	width : 
+}
+
+</style>
