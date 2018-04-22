@@ -1,12 +1,26 @@
 <template>
 
-	<div >
+	<div class="skin-blue sidebar-mini">
 		<navbar></navbar>
-		<div class="mainContainer">
-			
-		</div>
+    <leftbar></leftbar>
 	</div>
+</template>
+<script>
+import navbar  from '~/components/navbar.vue';
+import leftbar from '~/components/leftbar.vue';
 
+export default{
+  data(){
+    return {}
+  },
+  methods:{
+
+  },
+  components:{
+    navbar,
+    leftbar
+  }
+}
 </script>
 
 <style scoped>

@@ -6,17 +6,22 @@ module.exports = {
     title: 'nuxt',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     script:[
       { src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.slim.min.js' },
       { src: 'https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js' },
-      { src: 'https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js' }
+      { src: 'https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js' },
+      { src: '/js/adminlte.min.js' },
+      // { src: '/js/pages/dashboard.js' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css' , href: 'https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css'}
+      { rel: 'stylesheet', type: 'text/css' , href: 'https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css' },
+      { rel: 'stylesheet', type: 'text/css' , href: '/css/AdminLTE.css' },
+      { rel: 'stylesheet', type: 'text/css' , href: '/main.css' }
+
     ]
   },
   /*
