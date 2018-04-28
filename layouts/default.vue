@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="skin-blue sidebar-mini">
     <nuxt/>
   </div>
 </template>

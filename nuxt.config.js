@@ -10,18 +10,21 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     script:[
-      { src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.slim.min.js' },
-      { src: 'https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js' },
+      { src: 'https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js' },
+      { src: 'https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js' },
       { src: 'https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js' },
       { src: '/js/adminlte.min.js' },
-      // { src: '/js/pages/dashboard.js' }
+      { src: '/js/pages/dashboard2.js' },
+      { src: '/components/jvectormap/jquery-jvectormap.js'},
+      { src: '/components/jquery-slimscroll/jquery.slimscroll.min.js' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css' , href: 'https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css' },
+      { rel: 'stylesheet', type: 'text/css' , href: '/components/font-awesome/css/font-awesome.min.css' },
+      { rel: 'stylesheet', type: 'text/css' , href: '/components/Ionicons/css/ionicons.min.css' },
+      { rel: 'stylesheet', type: 'text/css' , href: 'https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css' },
       { rel: 'stylesheet', type: 'text/css' , href: '/css/AdminLTE.css' },
-      { rel: 'stylesheet', type: 'text/css' , href: '/main.css' }
-
+      { rel: 'stylesheet', type: 'text/css' , href: '/css/all-skins.css' },
     ]
   },
   /*
@@ -51,7 +54,7 @@ module.exports = {
 
   plugins: [
     // { src: "~plugins/mint-ui", ssr: true }
-    { src: '~plugins/element-ui', ssr: true }
+    // { src: '~plugins/element-ui', ssr: true }
   ],
   /*
   ** Build configuration

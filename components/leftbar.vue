@@ -1,6 +1,5 @@
 <template>
-
-<aside class="main-sidebar">
+  <aside class="main-sidebar">
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar" style="height: auto;">
     <!-- Sidebar user panel -->
