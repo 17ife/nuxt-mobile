@@ -8,7 +8,7 @@
     <li class="header">{{ notifications.unreadEmailMsg_1 }} {{ notifications.unreadEmail.length }} {{ notifications.unreadEmailMsg_2 }}</li>
     <li>
       <ul class="menu">
-        <li v-for="(item,index) in notifications.unreadEmail" :key="item" :index="index">
+        <li v-for="(item,index) in notifications.unreadEmail" :key="index" :index="index">
           <a href="javascript:void(0)">
             <div class="pull-left"><img :src="item.image" class="img-circle" alt="User Image"/> </div>
             <h4>{{ item.title }} <small><i class="fa fa-clock-o"></i> {{ item.time }}</small> </h4>
@@ -21,6 +21,7 @@
   </ul>
 </li>
 </template>
+
 <script>
 export default {
   data(){
@@ -42,3 +43,7 @@ export default {
   }
 }
 </script>
+
+<style scroped>
+</style>
+
