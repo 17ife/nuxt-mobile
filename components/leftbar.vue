@@ -43,10 +43,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 保健品</a></li>
-          <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 女上衣</a></li>
-          <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 女鞋</a></li>
-          <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 小电器</a></li>
+          <li v-for="(item,index) in tags" :key="index" :index="index" ><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> {{ item.tag_name }}</a></li>
         </ul>
       </li>
 
@@ -59,10 +56,10 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 保健品</a></li>
-          <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 女上衣</a></li>
-          <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 女鞋</a></li>
-          <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 小电器</a></li>
+          <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 未采购</a></li>
+          <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 已采购</a></li>
+          <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 未到货</a></li>
+          <li><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> 已到货</a></li>
         </ul>
       </li>
 
@@ -101,6 +98,29 @@
   <!-- /.sidebar -->
 </aside>
 </template>
-<script></script>
+<script>
+import axios from 'axios';
+
+export default {
+  data () {
+    return { tags:[ { "tag_name" : "保健品" ,"tag_type":"t0001"},{ "tag_name":"上衣","tag_type":"t0002" },{ "tag_name":"女鞋","tag_type":"t0002" },{ "tag_name":"小电器","tag_type":"t0002" }] }
+  },
+  methods:{
+    initData(){
+      let vm = this;
+      getData('/tags',"get",null).then(res => {
+        vm.tags = res;
+      })
+    }
+  },
+  // 生命周期
+  beforeCreate(){},
+  created(){},
+  beforeMount(){},
+  mounted(){},
+  beforeUpdate(){},
+  updated(){}
+}
+</script>
 <style scroped>
 </style>

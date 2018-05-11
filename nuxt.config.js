@@ -56,6 +56,14 @@ module.exports = {
     // { src: "~plugins/mint-ui", ssr: true }
     // { src: '~plugins/element-ui', ssr: true }
   ],
+
+  // modules: [
+  //   '@nuxtjs/axios',
+  //   '@nuxtjs/proxy'
+  // ],
+  // proxy: [
+  //   ['/', { target: 'http://localhost:7001' }]
+  // ],
   /*
   ** Build configuration
   */

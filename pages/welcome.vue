@@ -13,9 +13,7 @@
 	<footbar></footbar>
 
 	<rightbar></rightbar>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
+
   <div class="control-sidebar-bg">
     <commidtyContainer></commidtyContainer>
   </div>
@@ -24,10 +22,12 @@
 
 </template>
 <script>
-import navbar      from '~/components/navbar.vue';
-import leftbar     from '~/components/leftbar.vue';
-import footbar     from '~/components/footbar.vue';
-import rightbar    from '~/components/rightbar.vue';
+
+import axios    from 'axios';
+import navbar   from '~/components/navbar.vue';
+import leftbar  from '~/components/leftbar.vue';
+import footbar  from '~/components/footbar.vue';
+import rightbar from '~/components/rightbar.vue';
 
 import commidtyContainer from "~/components/containers/commodity/tablelist.vue";
 
@@ -35,8 +35,16 @@ export default{
   data(){
     return {}
   },
+  async asyncData () {
+    let result = await axios.get('http://localhost:7001/tags');
+    return {
+      tags : result.data
+    };
+  },
   methods:{
-
+    getTags(){
+      return this.tags;
+    }
   },
   components:{
     navbar,
@@ -44,7 +52,16 @@ export default{
 		footbar,
 		rightbar,
     commidtyContainer
-  }
+  },
+  // 生命周期
+  beforeCreate(){},
+  created(){},
+  beforeMount(){},
+  mounted(){
+    this.getTags();
+  },
+  beforeUpdate(){},
+  updated(){}
 }
 </script>
 
