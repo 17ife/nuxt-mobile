@@ -1,6 +1,6 @@
 import axios from 'axios'
 //定义fetch函数，config为配置
-function fetch(config){
+export function fetch(config){
   //返回promise对象
   return new Promise((resolve,reject) =>{
   //创建axios实例，把基本的配置放进去
@@ -17,7 +17,9 @@ function fetch(config){
     //请求成功后执行的函数
     instance(config).then(res =>{
       console.log(res);
-      resolve(res);
+      if(res.status === 200) {
+        resolve(res.data);
+      }
     //失败后执行的函数
     }).catch(err => {
       console.log(err);
@@ -27,7 +29,7 @@ function fetch(config){
 }
 
 // 封装调用的接口 getData
-function getData(url,type,data) {
+export function getData(url,type,data) {
   //如果type为空，默认为post方法，也可以自己改成get
   if(type==='')
     type = 'post';
@@ -37,5 +39,3 @@ function getData(url,type,data) {
     data: data,
   })
 }
-
-export default getData

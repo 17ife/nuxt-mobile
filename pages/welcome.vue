@@ -4,10 +4,10 @@
 
 	<navbar></navbar>
   <!-- Left side column. contains the logo and sidebar -->
-	<leftbar></leftbar>
+	<leftbar :tags="tags"></leftbar>
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="min-height: 960px;">
-
+  <div class="content-wrapper" style="min-height: 600px;">
+    <commidtyContainer></commidtyContainer>
   </div>
 
 	<footbar></footbar>
@@ -15,7 +15,7 @@
 	<rightbar></rightbar>
 
   <div class="control-sidebar-bg">
-    <commidtyContainer></commidtyContainer>
+    
   </div>
 
 </div>
@@ -23,27 +23,35 @@
 </template>
 <script>
 
-import axios    from 'axios';
+import { getData } from '~/plugins/axios';
 import navbar   from '~/components/navbar.vue';
 import leftbar  from '~/components/leftbar.vue';
 import footbar  from '~/components/footbar.vue';
 import rightbar from '~/components/rightbar.vue';
 
-import commidtyContainer from "~/components/containers/commodity/tablelist.vue";
+import commidtyContainer from "~/components/containers/commodity/list.vue";
 
 export default{
   data(){
     return {}
   },
   async asyncData () {
-    let result = await axios.get('http://localhost:7001/tags');
-    return {
-      tags : result.data
-    };
+     let tags = await getData('/tags','get',null);
+     return { tags : tags.data }
   },
   methods:{
+
     getTags(){
       return this.tags;
+    },
+
+    test(){
+      let vm = this;
+      getData('/tags','get',null).then(res => {
+        vm.tags = res.data;
+      },err => {
+        console.log(err)
+      })
     }
   },
   components:{
@@ -58,7 +66,6 @@ export default{
   created(){},
   beforeMount(){},
   mounted(){
-    this.getTags();
   },
   beforeUpdate(){},
   updated(){}

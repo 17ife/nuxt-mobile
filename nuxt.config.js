@@ -14,14 +14,19 @@ module.exports = {
       { src: 'https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js' },
       { src: 'https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js' },
       { src: '/js/adminlte.min.js' },
-      { src: '/js/pages/dashboard2.js' },
+      // { src: '/js/pages/dashboard2.js' },
       { src: '/components/jvectormap/jquery-jvectormap.js'},
-      { src: '/components/jquery-slimscroll/jquery.slimscroll.min.js' }
+      { src: '/components/jquery-slimscroll/jquery.slimscroll.min.js' },
+      { src: '/components/datatables.net/js/jquery.dataTables.min.js'},
+      { src: '/components/datatables.net-bs/js/dataTables.bootstrap.min.js'},
+      { src: '/components/fastclick/lib/fastclick.js'},
+      
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', type: 'text/css' , href: '/components/font-awesome/css/font-awesome.min.css' },
       { rel: 'stylesheet', type: 'text/css' , href: '/components/Ionicons/css/ionicons.min.css' },
+      { rel: 'stylesheet', type: 'text/css' , href: '/components/datatables.net-bs/css/dataTables.bootstrap.min.css' },
       { rel: 'stylesheet', type: 'text/css' , href: 'https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css' },
       { rel: 'stylesheet', type: 'text/css' , href: '/css/AdminLTE.css' },
       { rel: 'stylesheet', type: 'text/css' , href: '/css/all-skins.css' },

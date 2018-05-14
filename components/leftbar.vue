@@ -99,19 +99,14 @@
 </aside>
 </template>
 <script>
-import axios from 'axios';
 
 export default {
-  data () {
-    return { tags:[ { "tag_name" : "保健品" ,"tag_type":"t0001"},{ "tag_name":"上衣","tag_type":"t0002" },{ "tag_name":"女鞋","tag_type":"t0002" },{ "tag_name":"小电器","tag_type":"t0002" }] }
+  data(){
+    return {}
   },
+  props: ['tags'],
   methods:{
-    initData(){
-      let vm = this;
-      getData('/tags',"get",null).then(res => {
-        vm.tags = res;
-      })
-    }
+
   },
   // 生命周期
   beforeCreate(){},
