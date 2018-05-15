@@ -6,8 +6,9 @@
   <!-- Left side column. contains the logo and sidebar -->
 	<leftbar :tags="tags"></leftbar>
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="min-height: 600px;">
-    <commidtyContainer></commidtyContainer>
+  <div class="content-wrapper" style="min-height: 900px">
+    <!-- <commidtyContainer></commidtyContainer> -->
+    <nuxt-child :key="$route.params.id"/>
   </div>
 
 	<footbar></footbar>
@@ -15,7 +16,7 @@
 	<rightbar></rightbar>
 
   <div class="control-sidebar-bg">
-    
+
   </div>
 
 </div>
@@ -40,7 +41,6 @@ export default{
      return { tags : tags.data }
   },
   methods:{
-
     getTags(){
       return this.tags;
     },

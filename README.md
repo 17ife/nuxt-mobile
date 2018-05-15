@@ -39,3 +39,10 @@ Get more information about [Mint-ui](http://mint-ui.github.io/docs)
 * online pdf
 * system version log
 * administrator workstation
+
+
+## dev plan
+
+* add commodities
+* add commodity details , tag & value
+* leftbar link to nuxtchild

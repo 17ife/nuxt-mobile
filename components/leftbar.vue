@@ -23,14 +23,14 @@
       <li class="treeview">
         <a href="#">
           <i class="fa fa-plus-square"></i>
-          <span>商品维护</span>
+          <span>参数设置</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="javascript:void(0)"><i class="fa fa-clipboard"></i>商品</a></li>
-          <li><a href="javascript:void(0)"><i class="fa fa-list"></i> 类别</a></li>
+          <!-- <li><a href="javascript:void(0)"><i class="fa fa-clipboard"></i>商品</a></li> -->
+          <li><nuxt-link to="/main/managetype"><a href="javascript:void(0)"><i class="fa fa-list"></i> 维护种类</a></nuxt-link></li>
         </ul>
       </li>
 
@@ -43,7 +43,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li v-for="(item,index) in tags" :key="index" :index="index" ><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> {{ item.tag_name }}</a></li>
+          <li v-for="(item,index) in tags" :key="index" :index="index" ><nuxt-link :to="'/main/list'+item.tag_type"><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> {{ item.tag_name }}</a></nuxt-link></li>
         </ul>
       </li>
 
