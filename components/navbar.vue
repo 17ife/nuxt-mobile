@@ -3,8 +3,8 @@
 
   <!-- Logo -->
   <a href="javascript:void(0)" class="logo" >
-    <span class="logo-mini"><b>A</b>LT</span>
-    <span class="logo-lg"><b>Admin</b>LTE</span>
+    <span class="logo-mini"><b>{{logo.part1}}</b>{{logo.part2}}</span>
+    <span class="logo-lg"><b>{{logo.part3}}</b>{{logo.part4}}</span>
   </a>
 
   <!-- Header Navbar: style can be found in header.less -->
@@ -52,10 +52,10 @@ export default {
 
       },
       logo:{
-        part1:"A",
-        part2:"LT",
-        part3:"Admin",
-        part4:"LTE"
+        part1:"",
+        part2:"",
+        part3:"TST",
+        part4:".Admin"
       }
     }
   },

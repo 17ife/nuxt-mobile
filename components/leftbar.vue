@@ -43,7 +43,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li v-for="(item,index) in tags" :key="index" :index="index" ><nuxt-link :to="'/main/list'+item.tag_type"><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> {{ item.tag_name }}</a></nuxt-link></li>
+          <li v-for="(item,index) in tags" :key="index" :index="index" ><nuxt-link :to="'/main/'+item.tag_type"><a href="javascript:void(0)"><i class="fa fa-circle-o"></i> {{ item.tag_name }}</a></nuxt-link></li>
         </ul>
       </li>
 
