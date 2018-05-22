@@ -24,11 +24,11 @@
 </template>
 <script>
 
-import { getData } from '~/plugins/axios';
-import navbar   from '~/components/navbar.vue';
-import leftbar  from '~/components/leftbar.vue';
-import footbar  from '~/components/footbar.vue';
-import rightbar from '~/components/rightbar.vue';
+import { getData }  from '~/plugins/axios';
+import navbar       from '~/components/navbar.vue';
+import leftbar      from '~/components/leftbar.vue';
+import footbar      from '~/components/footbar.vue';
+import rightbar     from '~/components/rightbar.vue';
 
 import commidtyContainer from "~/components/containers/commodity/list.vue";
 
