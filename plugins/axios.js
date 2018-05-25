@@ -12,8 +12,8 @@ export function fetch(config){
       // 请求超时
       timeout: 5000,
       //定义请求根目录
-      // baseURL: 'http://localhost:7001'
-      baseURL:"http://140.82.4.24:7001"
+      baseURL: 'http://localhost:7001'
+      //baseURL:"http://140.82.4.24:7001"
     });
     //请求成功后执行的函数
     instance(config).then(res =>{

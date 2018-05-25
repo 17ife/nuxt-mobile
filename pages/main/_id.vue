@@ -20,16 +20,16 @@
               <th>操作</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-              <td>活性多肽面膜</td>
-              <td>280元</td>
-              <td>100g/1盒</td>
-              <td>这是一盒面膜</td>
+            <tbody v-for="(item,index) in list" :key="index" :index="index">
+            <tr> 
+              <td>{{ item.name }}</td>
+              <td>{{ item.price }} {{ item.unit }}</td>
+              <td>{{ item.size }}</td>
+              <td>{{ item.detail }}</td>
               <td>
-                <a class="modal-link" @click="openDetail">维护详情</a>
-                <a class="modal-link" @click="getLink"> 推荐连接</a>
-                <a class="modal-link" @click="buildAD"> 生成图片</a>
+                <a class="modal-link" @click="openDetail(item)">维护详情</a>
+                <a class="modal-link" @click="getLink(item)"> 推荐连接</a>
+                <a class="modal-link" @click="buildAD(item)"> 生成图片</a>
               </td>
             </tr>
             </tbody>
@@ -74,10 +74,11 @@
 import { getData } from '~/plugins/axios';
 import modal from "~/components/operations/modal";
 
-export default{
-  asyncData({ params, env, error }) {
+export default {
+  async asyncData({ params, env, error }) {
     // let list = await getData('/getCommodities/:id','get',null);
-    return { id:params.id }
+    let all = await getData('/commodities','get',null);
+    return { id : params.id , list : all.data };
   },
 
   data(){
@@ -85,23 +86,29 @@ export default{
       detailSettings:{
         id:"addDetail",
         title:"维护详情",
-        bodyHtml:"<p></p>"
+        bodyHtml:"<p>系统异常请联系管理员</p>"
       },
       getLinkSettings:{
         id:"getLinksDetail",
         title:"请复制推广链接",
-        bodyHtml:"<p>推广链接</p>"
+        bodyHtml:"<p>系统异常请联系管理员</p>"
       },
       buildAdSettings:{
         id:"buildAdDetail",
-        title:"请复制推广链接",
-        bodyHtml:"<p>推广链接</p>"
+        title:"生成广告图",
+        bodyHtml:"<p>系统异常请联系管理员</p>"
       }
     }
   },
   methods:{
-    openDetail(){
+    openDetail(item){
       let vm = this;
+      console.log(item);
+      vm.bodyHtml = `
+        <div>
+          
+        </div>
+      `
       vm.commonOpen(vm.detailSettings.id);
     },
     getLink(){
@@ -140,4 +147,5 @@ export default{
 .modal-link{
   cursor:pointer;
 }
+
 </style>
