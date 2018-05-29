@@ -77,7 +77,7 @@ import modal from "~/components/operations/modal";
 export default {
   async asyncData({ params, env, error }) {
     // let list = await getData('/getCommodities/:id','get',null);
-    let all = await getData('/commodities','get',null);
+    let all = await getData('/commodities?tags=' + params.id,'get',null);
     return { id : params.id , list : all.data };
   },
 
