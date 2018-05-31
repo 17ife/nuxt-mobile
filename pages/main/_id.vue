@@ -20,18 +20,18 @@
               <th>操作</th>
             </tr>
             </thead>
-            <tbody v-for="(item,index) in list" :key="index" :index="index">
-            <tr> 
-              <td>{{ item.name }}</td>
-              <td>{{ item.price }} {{ item.unit }}</td>
-              <td>{{ item.size }}</td>
-              <td>{{ item.detail }}</td>
-              <td>
-                <a class="modal-link" @click="openDetail(item)">维护详情</a>
-                <a class="modal-link" @click="getLink(item)"> 推荐连接</a>
-                <a class="modal-link" @click="buildAD(item)"> 生成图片</a>
-              </td>
-            </tr>
+            <tbody >
+              <tr v-for="(item,index) in list" :key="index" :index="index"> 
+                <td>{{ item.name }}</td>
+                <td>{{ item.price }} {{ item.unit }}</td>
+                <td>{{ item.size }}</td>
+                <td>{{ item.detail }}</td>
+                <td>
+                  <a class="modal-link" @click="openDetail(item)">维护详情</a>
+                  <a class="modal-link" @click="getLink(item)"> 推荐连接</a>
+                  <a class="modal-link" @click="buildAD(item)"> 生成图片</a>
+                </td>
+              </tr>
             </tbody>
             <tfoot>
             <tr>
@@ -53,17 +53,17 @@
   <!-- /.row -->
 </section>
 
-<modal
-  :settings="detailSettings"
-  @onModalOk="saveDetail"></modal>
+<modal :settings="detailSettings" @onModalOk="saveDetail">
+  <commodityDetails slot="body" :formdata="detailSettings.form" ></commodityDetails>
+</modal>
 
 <modal
   :settings="getLinkSettings"
-  @onModalOk="commonSave"></modal>
+  @onModalOk="modalSave"></modal>
 
 <modal
   :settings="buildAdSettings"
-  @onModalOk="commonSave"></modal>
+  @onModalOk="modalSave"></modal>
 
 </div>
 
@@ -73,6 +73,7 @@
 
 import { getData } from '~/plugins/axios';
 import modal from "~/components/operations/modal";
+import commodityDetails  from "~/components/forms/commodityDetails";
 
 export default {
   async asyncData({ params, env, error }) {
@@ -86,7 +87,10 @@ export default {
       detailSettings:{
         id:"addDetail",
         title:"维护详情",
-        bodyHtml:"<p>系统异常请联系管理员</p>"
+        form:{
+          // email:"",
+          password:"",
+        }
       },
       getLinkSettings:{
         id:"getLinksDetail",
@@ -104,31 +108,27 @@ export default {
     openDetail(item){
       let vm = this;
       console.log(item);
-      vm.bodyHtml = `
-        <div>
-          
-        </div>
-      `
-      vm.commonOpen(vm.detailSettings.id);
+      vm.modalOpen(vm.detailSettings.id);
     },
     getLink(){
       let vm = this;
-      vm.commonOpen(vm.getLinkSettings.id);
+      vm.modalOpen(vm.getLinkSettings.id);
     },
     buildAD(){
       let vm = this;
-      vm.commonOpen(vm.buildAdSettings.id);
+      vm.modalOpen(vm.buildAdSettings.id);
     },
     saveDetail(){
       console.log("ok");
     },
-    commonSave(){},
-    commonOpen(id){
+    modalSave(){},
+    modalOpen(id){
       $("#"+id).modal('show')
     }
   },
   components:{
-    modal
+    modal,
+    commodityDetails
   },
   // 生命周期
   beforeCreate(){},
