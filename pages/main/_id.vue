@@ -88,8 +88,11 @@ export default {
         id:"addDetail",
         title:"维护详情",
         form:{
-          // email:"",
-          password:"",
+          brand:"",
+          shelfLife:"",
+          type:"",
+          suit:"",
+          size:""
         }
       },
       getLinkSettings:{
